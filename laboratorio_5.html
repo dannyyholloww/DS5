@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            color: white;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+            width: 100vw;
+        }
+
+        main {
+            width: 70vw;
+        }
+
+        fieldset {
+            border-radius: 5px;
+        }
+
+        div,
+        button {
+            width: 100%;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.3rem;
+        }
+
+        form>div {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        #reversedText {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section>
+            <fieldset>
+                <form>
+                    <!-- Input para la cadena -->
+                    <div>
+                        <label for="problema-1-cadena">Cadena: </label>
+                        <input type="text" id="problema-1-cadena" name="cadena" required>
+                        <span id="reversedText"> <!-- Span para mostrar la cadena invertida --> </span>
+                    </div>
+
+
+                    <div>
+                        <label for="color-select">Selecciona el color de tu preferencia para la respuesta:</label>
+                        <select id="color-select">
+                            <option value="white">Blanco</option>
+                            <option value="red">Rojo</option>
+                            <option value="blue">Azul</option>
+                            <option value="green">Verde</option>
+                        </select>
+                    </div>
+                </form>
+            </fieldset>
+        </section>
+    </main>
+
+    <script>
+        const inputField = document.querySelector('#problema-1-cadena');
+        const reversedSpan = document.querySelector('#reversedText');
+        const colorSelect = document.querySelector('#color-select');
+
+        // Evento para invertir el texto a medida que se escribe
+        inputField.addEventListener('input', (e) => {
+            const inputText = e.target.value;
+            const reversedText = inputText.split('').reverse().join('');
+            reversedSpan.textContent = reversedText;
+        });
+
+        // Evento para cambiar el color del texto basado en la selección del usuario
+        colorSelect.addEventListener('change', (e) => {
+            const selectedColor = e.target.value;
+            reversedSpan.style.color = selectedColor;
+        });
+    </script>
+</body>
+
+</html>
