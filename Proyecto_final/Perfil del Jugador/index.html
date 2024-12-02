@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valorant Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="navbar">
+            <h1>ValorantDashboard</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Agents</a></li>
+                    <li><a href="#">Maps</a></li>
+                    <li><a href="#">Weapons</a></li>
+                    <li class="active"><a href="#">Player Search</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="search-section">
+                <h2>Search for Player Profile</h2>
+                <div class="search-bar">
+                    <input type="text" placeholder="Enter Username" id="username">
+                    <input type="text" placeholder="Enter Region" id="region">
+                    <button id="search-btn">Search</button>
+                </div>
+            </section>
+
+            <section class="stats-section">
+                <div class="stats-card">
+                    <h3>Recent Matches</h3>
+                    <ul id="recent-matches">
+                        <li>Match 1: Win | K/D/A: 10/2/5</li>
+                        <li>Match 2: Loss | K/D/A: 8/9/3</li>
+                        <li>Match 3: Win | K/D/A: 12/4/6</li>
+                        <li>Match 4: Win | K/D/A: 15/3/10</li>
+                        <li>Match 5: Loss | K/D/A: 9/11/2</li>
+                    </ul>
+                </div>
+
+                <div class="stats-card">
+                    <h3>Current Rank & KDA</h3>
+                    <p>Rank: Diamond 2</p>
+                    <p>KDA Ratio: 1.8</p>
+                </div>
+
+                <div class="stats-card">
+                    <h3>Performance Comparison</h3>
+                    <p>Compared to players of similar level:</p>
+                    <p>Trend: Above Average</p>
+                    <p>Recent Performance: Improving</p>
+                </div>
+            </section>
+
+            <section class="historical-section">
+                <div class="historical-card">
+                    <h3>Historical Record</h3>
+                    <p>Games Played: 250</p>
+                    <p>Wins: 150</p>
+                    <p>Losses: 100</p>
+                </div>
+                <div class="performance-chart">
+                    <h3>Performance Trends</h3>
+                    <canvas id="performance-chart"></canvas>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2023 ValorantDashboard. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact</a>
+            </div>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
