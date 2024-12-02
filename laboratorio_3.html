@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio #2</title>
+    <style>
+        body {
+
+            background-color: black;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+<h1>Hola Mundo</h1>
+<h2>Hola Mundo</h2>
+<h3>Hola Mundo</h3>
+<h4>Hola Mundo</h4>
+<h5>Hola Mundo</h5>
+<h6>Hola Mundo</h6>
+<script>
+// Undifine es una variable que se declaro pero que no tiene valor
+function esPalindromo(cadena) {
+    // Comprobar si la cadena es un palíndromo
+    return cadena === cadena.split('').reverse().join('');
+}
+
+function esPalindromoDobleBase(n) {
+    // Convertir el número a una cadena (base 10)
+    let base10 = n.toString();
+    
+    // Convertir el número a su representación en base 2
+    let base2 = n.toString(2);
+    
+    // Verificar si es palíndromo en ambas bases
+    return esPalindromo(base10) && esPalindromo(base2);
+}
+
+
+let numero = 9;
+console.log(esPalindromoDobleBase(numero)); // true (9 es 1001 en binario y es palíndromo en ambas bases)
+
+let numero2 = 10;
+console.log(esPalindromoDobleBase(numero2)); // false (10 es 1010 en binario, no es palíndromo en ambas bases)
+
+</script>
+<!-- Parrafos -->
+<script>
+  function contarCaracteres(t) {
+    const resultado = {};
+
+    for (let i = 0; i < t.length; i++) {
+        const char = t[i];
+        if (resultado[char]) {
+            resultado[char]++;
+        } else {
+            resultado[char] = 1;
+        }
+    }
+
+    return resultado;
+}
+
+// Ejemplo de uso
+const cadena = "AABBBACAA";
+console.log(contarCaracteres(cadena)); 
+// Resultado: { A: 5, B: 3, C: 1 }
+
+</script>
+
+<script>
+
+function esBisiesto(a) {
+    if (a % 4 === 0 && (a % 100 !== 0 || a % 400 === 0)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// Ejemplo de uso
+const año = 2024;
+console.log(esBisiesto(año)); // true
+
+</script>
+
+<script>
+
+function esPrimo(n) {
+    if (n < 2) return false;
+    for (let i = 2; i <= Math.sqrt(n); i++) {
+        if (n % i === 0) return false;
+    }
+    return true;
+}
+
+function sumatoriaPrimos(n) {
+    let sum = 0;
+    
+    for (let i = 1; i <= n; i++) {
+        if (esPrimo(i)) {
+            sum += i;
+        }
+    }
+
+    return sum;
+}
+
+// Ejemplo de uso
+console.log(sumatoriaPrimos(numero)); // Resultado: 18
+
+</script>
+<p>Hola Mundo</p>
+<p>Hola Mundo</p>
+
+<span>Span</span>
+<span>Mundo</span>
+
+</body>
+</html>
